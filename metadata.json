@@ -1,0 +1,6 @@
+{
+  "name": "Qaloon Tracker - Suivi de Récitation Coranique",
+  "description": "Application de suivi de récitation du Coran selon la riwaya Qaloon pour enseignants, avec tests automatisés, gestion des erreurs par verset, rapports hebdomadaires et mode hors ligne.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
