@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BookOpen,
   Users,
@@ -10,7 +10,9 @@ import {
   Search,
   ListFilter,
   CheckCircle2,
-  Smartphone
+  Smartphone,
+  UserCheck,
+  ChevronDown
 } from 'lucide-react';
 import { Student } from '../types/quran';
 
@@ -37,6 +39,27 @@ export const Navbar: React.FC<NavbarProps> = ({
   selectedStudentId,
   onSelectStudent
 }) => {
+  const [teachers, setTeachers] = useState<string[]>([
+    'المحفظ مجدي (الافتراضي)',
+    'المحفظ عبد الله',
+    'المحفظة أمينة'
+  ]);
+  const [currentTeacher, setCurrentTeacher] = useState<string>('المحفظ مجدي (الافتراضي)');
+  const [showAccountDropdown, setShowAccountDropdown] = useState(false);
+  const [newTeacherInput, setNewTeacherInput] = useState('');
+  const [showAddTeacherModal, setShowAddTeacherModal] = useState(false);
+
+  const handleAddTeacher = () => {
+    if (newTeacherInput.trim()) {
+      const name = newTeacherInput.trim();
+      setTeachers([...teachers, name]);
+      setCurrentTeacher(name);
+      setNewTeacherInput('');
+      setShowAddTeacherModal(false);
+      setShowAccountDropdown(false);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-40 bg-slate-900/95 backdrop-blur border-b border-slate-800 text-slate-100 shadow-lg">
       {/* Top Banner Bar */}
@@ -65,8 +88,53 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
           </div>
 
-          {/* Center Actions: Selected Student Selector */}
+          {/* Center Actions: Selected Student Selector & Account Dropdown */}
           <div className="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
+            {/* Account Switcher Button */}
+            <div className="relative">
+              <button
+                onClick={() => setShowAccountDropdown(!showAccountDropdown)}
+                className="flex items-center space-x-1.5 rtl:space-x-reverse bg-slate-800 border border-slate-700/80 rounded-lg px-2.5 py-1.5 text-xs text-amber-300 hover:bg-slate-700 transition-all"
+              >
+                <UserCheck className="w-3.5 h-3.5 text-amber-400" />
+                <span className="font-semibold max-w-[120px] truncate">{currentTeacher}</span>
+                <ChevronDown className="w-3.5 h-3.5 text-slate-400" />
+              </button>
+
+              {showAccountDropdown && (
+                <div className="absolute right-0 rtl:right-auto rtl:left-0 mt-2 w-56 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl p-2 z-50 space-y-1 text-xs">
+                  <div className="px-2 py-1 text-[10px] font-bold text-slate-500 uppercase">
+                    حساب المحفظ / المعلم الحالي
+                  </div>
+                  {teachers.map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => {
+                        setCurrentTeacher(t);
+                        setShowAccountDropdown(false);
+                      }}
+                      className={`w-full text-right px-2.5 py-1.5 rounded-lg font-medium flex items-center justify-between ${
+                        currentTeacher === t
+                          ? 'bg-amber-500/10 text-amber-300 font-bold'
+                          : 'text-slate-300 hover:bg-slate-800'
+                      }`}
+                    >
+                      <span>{t}</span>
+                      {currentTeacher === t && <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />}
+                    </button>
+                  ))}
+                  <div className="pt-1 border-t border-slate-800">
+                    <button
+                      onClick={() => setShowAddTeacherModal(true)}
+                      className="w-full text-right px-2.5 py-1.5 rounded-lg text-emerald-400 hover:bg-emerald-500/10 font-bold"
+                    >
+                      + إضافة حساب معلم جديد
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <div className="flex items-center bg-slate-800/80 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs">
               <span className="text-slate-400 ml-2 rtl:mr-0 rtl:ml-2">الطالب الحالي:</span>
               <select
@@ -205,6 +273,40 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </nav>
       </div>
+
+      {/* Add Teacher Account Modal */}
+      {showAddTeacherModal && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-sm w-full p-6 shadow-2xl space-y-4">
+            <h3 className="text-sm font-bold text-slate-100 font-arabic">إضافة حساب معلم / محفظ جديد</h3>
+            <p className="text-xs text-slate-400">
+              أدخل اسم المحفظ أو المعلم للتبديل بين الحسابات وتوثيق الجلسات:
+            </p>
+            <input
+              type="text"
+              placeholder="مثال: المحفظ محمد علي"
+              value={newTeacherInput}
+              onChange={(e) => setNewTeacherInput(e.target.value)}
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-xs text-slate-100 focus:outline-none focus:border-amber-500"
+            />
+            <div className="flex justify-end space-x-2 rtl:space-x-reverse pt-2">
+              <button
+                onClick={() => setShowAddTeacherModal(false)}
+                className="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs"
+              >
+                إلغاء
+              </button>
+              <button
+                onClick={handleAddTeacher}
+                className="px-4 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold rounded-lg text-xs"
+              >
+                إضافة الحساب
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
+

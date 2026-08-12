@@ -34,7 +34,9 @@ export const OfflineManagerModal: React.FC<OfflineManagerModalProps> = ({
   const [syncSuccessMsg, setSyncSuccessMsg] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
 
-  const [appUrl, setAppUrl] = useState(() => window.location.href);
+  const [appUrl, setAppUrl] = useState(() => {
+    return window.location.origin + window.location.pathname;
+  });
   const [isRegenerating, setIsRegenerating] = useState(false);
 
   const handleCopyLink = () => {
@@ -45,9 +47,8 @@ export const OfflineManagerModal: React.FC<OfflineManagerModalProps> = ({
 
   const handleRegenerateLink = () => {
     setIsRegenerating(true);
-    // Refresh current URL or add timestamp query parameter to bypass cache
-    const baseUrl = window.location.origin + window.location.pathname;
-    const freshUrl = `${baseUrl}?install_v=${Date.now()}`;
+    const cleanOrigin = window.location.origin;
+    const freshUrl = `${cleanOrigin}/?v=${Date.now()}`;
     setAppUrl(freshUrl);
     setTimeout(() => {
       setIsRegenerating(false);
