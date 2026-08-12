@@ -1,0 +1,20 @@
+{
+  "name": "مقرأة قالون - تطبيق متابعة التلاوة والحفظ",
+  "short_name": "مقرأة قالون",
+  "description": "تطبيق محفظ القرآن الكريم لتسجيل وتتبع التلاوة برواية قالون عن نافع بدون إنترنت",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="128" fill="#020617"/>
+  <rect x="24" y="24" width="464" height="464" rx="104" fill="none" stroke="#f59e0b" stroke-width="8" stroke-dasharray="16 12"/>
+  <circle cx="256" cy="256" r="180" fill="#0f172a" stroke="#d97706" stroke-width="6"/>
+  <circle cx="256" cy="256" r="155" fill="#1e293b" stroke="#f59e0b" stroke-width="3"/>
+  <text x="256" y="295" font-family="'Amiri', 'Amiri Quran', serif" font-size="140" font-weight="bold" fill="#f59e0b" text-anchor="middle">قالون</text>
+  <path d="M256 90 L268 115 L295 115 L273 132 L281 158 L256 142 L231 158 L239 132 L217 115 L244 115 Z" fill="#10b981"/>
+</svg>

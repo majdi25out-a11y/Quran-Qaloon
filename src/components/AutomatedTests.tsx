@@ -59,7 +59,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
         {
           id: 1,
           type: 'continue_verse',
-          prompt: 'Complétez le verset (Sourate An-Nisa - Verset 27):',
+          prompt: 'أكمل الآية الكريمة (سورة النساء - الآية 27):',
           subPromptArabic: 'وَٱللَّهُ يُرِيدُ أَن يَتُوبَ عَلَيْكُمْ وَيُرِيدُ ٱلَّذِينَ يَتَّبِعُونَ ٱلشَّهَوَٰتِ...',
           options: [
             'أَن تَمِيلُوا۟ مَيْلًا عَظِيمًا',
@@ -68,12 +68,12 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'وَلَا تَقْتُلُوٓا۟ أَنفُسَكُمْ'
           ],
           correctIndex: 0,
-          explanation: 'La suite exacte du verset 27 est: (أَن تَمِيلُوا۟ مَيْلًا عَظِيمًا)'
+          explanation: 'التتمة الصحيحة للآية 27 هي: (أَن تَمِيلُوا۟ مَيْلًا عَظِيمًا)'
         },
         {
           id: 2,
           type: 'continue_verse',
-          prompt: 'Complétez le verset (Sourate An-Nisa - Verset 28):',
+          prompt: 'أكمل الآية الكريمة (سورة النساء - الآية 28):',
           subPromptArabic: 'يُرِيدُ ٱللَّهُ أَن يُخَفِّفَ عَنكُمْ...',
           options: [
             'وَأَنفَقُوا۟ مِمَّا رَزَقَهُمُ ٱللَّهُ',
@@ -82,12 +82,12 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'وَنُدْخِلْكُم مُّدْخَلًا كَرِيمًا'
           ],
           correctIndex: 1,
-          explanation: 'La suite exacte du verset 28 est: (وَخُلِقَ ٱلْإِنسَٰنُ ضَعِيفًا)'
+          explanation: 'التتمة الصحيحة للآية 28 هي: (وَخُلِقَ ٱلْإِنسَٰنُ ضَعِيفًا)'
         },
         {
           id: 3,
           type: 'continue_verse',
-          prompt: 'Complétez le verset (Sourate Al-Mulk - Verset 1):',
+          prompt: 'أكمل الآية الكريمة (سورة الملك - الآية 1):',
           subPromptArabic: 'تَبَٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ...',
           options: [
             'الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ',
@@ -96,7 +96,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'سَبْعَ سَمَاوَاتٍ طِبَاقًا'
           ],
           correctIndex: 1,
-          explanation: 'La suite exacte du verset 1 de la Sourate Al-Mulk est: (وَهُوَ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ)'
+          explanation: 'التتمة الصحيحة للآية 1 من سورة الملك هي: (وَهُوَ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ)'
         }
       ];
     } else if (testType === 'qaloon_rules') {
@@ -104,7 +104,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
         {
           id: 1,
           type: 'qaloon_rules',
-          prompt: 'Règle de Qaloon: Dans le verset (أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًا), comment قالون lit-il la Mim al-Jam\'?',
+          prompt: 'حكم قالون: في قوله تعالى (أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًا)، كيف يقرأ قالون ميم الجمع؟',
           subPromptArabic: 'أَنفُسَكُمْ ۚ إِنَّ ٱللَّهَ كَانَ بِكُمْ رَحِيمًا',
           options: [
             'ضم الميم وصلتها بواو (أَنفُسَكُمُۥ) بخلف عنه',
@@ -113,12 +113,12 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'حذف الميم نهائياً'
           ],
           correctIndex: 0,
-          explanation: 'Qaloon lit la Mim al-Jam\' avec la Damma et la Sila en Waw (ضم ميم الجمع وصلتها) avec possibilité d\'Iskan.'
+          explanation: 'يقرأ قالون ميم الجمع بالضم والصلة بواو (ضم ميم الجمع وصلتها) مع جواز الإسكان.'
         },
         {
           id: 2,
           type: 'qaloon_rules',
-          prompt: 'Dans la Riwaya Qaloon, quelle est la règle pour le Mad Ja\'iz Munfasil (المد المنفصل)?',
+          prompt: 'في رواية قالون، ما هو حكم المد المنفصل في نحو (يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟)؟',
           subPromptArabic: 'يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟',
           options: [
             'القصر (حركتان) مع التوسط (4 حركات) بخلف عنه',
@@ -127,7 +127,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'التوسط فقط بدون قصر'
           ],
           correctIndex: 0,
-          explanation: 'Qaloon a deux visages dans le Mad Munfasil: Le Qasr (2 harakat) et le Tawassut (4 harakat).'
+          explanation: 'لقالون وجهان في المد المنفصل: القصر (حركتان) والتوسط (4 حركات).'
         }
       ];
     } else {
@@ -136,7 +136,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
         {
           id: 1,
           type: 'next_verse',
-          prompt: 'Quel est le verset SUIVANT après (Sourate An-Nisa - Verset 29)?',
+          prompt: 'ما هي الآية التالية لقوله تعالى (سورة النساء - الآية 29)؟',
           subPromptArabic: 'يَٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ لَا تَأْكُلُوٓا۟ أَمْوَٰلَكُم بَيْنَكُم بِٱلْبَٰطِلِ...',
           options: [
             'وَمَن يَفْعَلْ ذَٰلِكَ عُدْوَٰنًا وَظُلْمًا فَسَوْفَ نُصْلِيهِ نَارًا ۚ',
@@ -145,12 +145,12 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'يُرِيدُ ٱللَّهُ أَن يُخَفِّفَ عَنكُمْ'
           ],
           correctIndex: 0,
-          explanation: 'Le verset 30 commence par: (وَمَن يَفْعَلْ ذَٰلِكَ عُدْوَٰنًا وَظُلْمًا...)'
+          explanation: 'تبدأ الآية 30 بـ: (وَمَن يَفْعَلْ ذَٰلِكَ عُدْوَٰنًا وَظُلْمًا...)'
         },
         {
           id: 2,
           type: 'next_verse',
-          prompt: 'Quel est le verset SUIVANT après Al-Ikhlas Verset 1 (قُلْ هُوَ ٱللَّهُ أَحَدٌ)?',
+          prompt: 'ما هي الآية التالية لقوله تعالى (سورة الإخلاص - الآية 1)؟',
           subPromptArabic: 'قُلْ هُوَ ٱللَّهُ أَحَدٌ',
           options: [
             'ٱللَّهُ ٱلصَّمَدُ',
@@ -159,7 +159,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             'قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ'
           ],
           correctIndex: 0,
-          explanation: 'Verset 2 d\'Al-Ikhlas: (ٱللَّهُ ٱلصَّمَدُ)'
+          explanation: 'الآية الثانية من سورة الإخلاص هي: (ٱللَّهُ ٱلصَّمَدُ)'
         }
       ];
     }
@@ -235,7 +235,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
       // Simulate speech recognition
       setTimeout(() => {
         setIsListeningMic(false);
-        alert("Récitation vocale analysée avec succès! Prononciation et versets validés.");
+        alert("تم تحليل التسميع الصوتي بنجاح! تم التحقق من سلامة اللفظ والآيات.");
       }, 3000);
     }
   };
@@ -246,16 +246,16 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
     <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
       {/* Title Header */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 rtl:space-x-reverse">
           <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold flex items-center justify-center">
             <Award className="w-6 h-6" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-slate-100">
-              Tests Automatisés de Mémorisation
+            <h2 className="text-xl font-bold text-slate-100 font-arabic">
+              اختبارات الحفظ الآلية
             </h2>
             <p className="text-xs text-slate-400">
-              Évaluation automatique de la suite des versets & règles de la Riwaya Qaloon
+              تقييم آلي لتسلسل الآيات وأحكام رواية قالون
             </p>
           </div>
         </div>
@@ -263,29 +263,29 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
         {/* Voice Recognition Test Button */}
         <button
           onClick={handleToggleVoiceMic}
-          className={`flex items-center space-x-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
+          className={`flex items-center space-x-2 rtl:space-x-reverse px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
             isListeningMic
               ? 'bg-rose-600 text-white animate-pulse'
               : 'bg-slate-800 text-amber-300 hover:bg-slate-700 border border-amber-500/30'
           }`}
         >
           {isListeningMic ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
-          <span>{isListeningMic ? 'Écoute vocale en cours...' : 'Test de Récitation Vocale'}</span>
+          <span>{isListeningMic ? 'جاري الاستماع الصوتي...' : 'اختبار التسميع الصوتي'}</span>
         </button>
       </div>
 
       {!isTestActive ? (
         /* Test Configuration Setup Screen */
         <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-2xl space-y-6">
-          <h3 className="text-base font-bold text-slate-200 border-b border-slate-800 pb-3">
-            Configurer un nouveau test
+          <h3 className="text-base font-bold text-slate-200 border-b border-slate-800 pb-3 font-arabic">
+            إعداد اختبار جديد
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
             {/* Student Picker */}
             <div>
               <label className="block text-slate-300 font-semibold mb-1.5">
-                Élève à évaluer:
+                الطالب المراد تقييمه:
               </label>
               <select
                 value={selectedStudentId}
@@ -303,7 +303,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             {/* Surah Picker */}
             <div>
               <label className="block text-slate-300 font-semibold mb-1.5">
-                Sourate cible:
+                السورة الهدف:
               </label>
               <select
                 value={surahId}
@@ -312,7 +312,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
               >
                 {SURAHS_DATA.map((s) => (
                   <option key={s.id} value={s.id}>
-                    #{s.id} {s.nameEnglish} ({s.nameArabic})
+                    #{s.id} سورة {s.nameArabic}
                   </option>
                 ))}
               </select>
@@ -321,25 +321,25 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             {/* Test Type */}
             <div>
               <label className="block text-slate-300 font-semibold mb-1.5">
-                Type d'épreuve:
+                نوع الاختبار:
               </label>
               <select
                 value={testType}
                 onChange={(e) => setTestType(e.target.value as TestType)}
                 className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-slate-100 font-medium focus:outline-none focus:border-amber-500"
               >
-                <option value="continue_verse">Compléter le verset ("أكمل الآية")</option>
-                <option value="next_verse">Verset Suivant ("الآية التالية")</option>
-                <option value="qaloon_rules">Règles Spécifiques Qaloon ("أحكام قالون")</option>
+                <option value="continue_verse">إكمال الآية الكريمة ("أكمل الآية")</option>
+                <option value="next_verse">الآية التالية ("الآية التالية")</option>
+                <option value="qaloon_rules">أحكام خاصة برواية قالون ("أحكام قالون")</option>
               </select>
             </div>
           </div>
 
           {/* Test Description Card */}
           <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 text-xs space-y-2">
-            <span className="font-bold text-amber-400 block">Objectif de l'évaluation:</span>
+            <span className="font-bold text-amber-400 block font-arabic">هدف التقييم:</span>
             <p className="text-slate-300 leading-relaxed">
-              Ce test vérifie la réactivité de l'élève <strong className="text-amber-300">{selectedStudent.name}</strong> sur la mémorisation exacte et le respect des particularités de la lecture Qaloon. Un rapport chiffré sera automatiquement consigné dans son profil.
+              يختبر هذا الاختبار سرعة استحضار الطالب <strong className="text-amber-300">{selectedStudent.name}</strong> وسرعة بديهته في حفظ الآيات ورعاية أحكام قالون. وسيتم حفظ نتيجة الاختبار تلقائياً في ملف الطالب.
             </p>
           </div>
 
@@ -347,10 +347,10 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
           <div className="flex justify-end pt-2">
             <button
               onClick={handleStartTest}
-              className="flex items-center space-x-2 px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold shadow-xl transition-all active:scale-95"
+              className="flex items-center space-x-2 rtl:space-x-reverse px-6 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold shadow-xl transition-all active:scale-95"
             >
               <Sparkles className="w-5 h-5" />
-              <span>Démarrer le Test Automatisé</span>
+              <span>بدء الاختبار الآلي</span>
             </button>
           </div>
         </div>
@@ -362,26 +362,26 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-slate-100">
-              Test Terminé pour {selectedStudent.name}!
+            <h3 className="text-2xl font-bold text-slate-100 font-arabic">
+              تم كمال الاختبار بنجاح للطالب {selectedStudent.name}!
             </h3>
             <p className="text-sm text-slate-400 mt-1">
-              Score: {scoreCount} / {questions.length} réponses correctes
+              النتيجة: {scoreCount} / {questions.length} إجابات صحيحة
             </p>
           </div>
 
           <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl max-w-md mx-auto text-xs text-slate-300">
             {scoreCount === questions.length ? (
               <span className="text-emerald-400 font-bold">
-                🎉 Excellent! Mémorisation et règles Qaloon parfaitement assimilées.
+                🎉 ممتاز جداً! تم استحضار الحفظ وأحكام قالون بشكل متقن.
               </span>
             ) : scoreCount >= questions.length / 2 ? (
               <span className="text-amber-300 font-bold">
-                👍 Bon résultat. Quelques hésitations à retravailler à la prochaine séance.
+                👍 نتيجة جيدة. يُنصح ببعض التثبيت والمراجعة في الجلسة القادمة.
               </span>
             ) : (
               <span className="text-rose-400 font-bold">
-                ⚠️ Résultat insuffisant. Nécessite une révision guidée avec l'enseignant.
+                ⚠️ نتيجة تحتاج إلى تحسين. تتطلب مراجعة موجهة مع المحفظ.
               </span>
             )}
           </div>
@@ -390,7 +390,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
             onClick={() => setIsTestActive(false)}
             className="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-xs"
           >
-            Retour au Menu des Tests
+            العودة إلى قائمة الاختبارات
           </button>
         </div>
       ) : (
@@ -399,16 +399,16 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
           {/* Question Header Progress Bar */}
           <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3">
             <span>
-              Question {currentQuestionIndex + 1} / {questions.length}
+              السؤال {currentQuestionIndex + 1} / {questions.length}
             </span>
             <span className="font-mono text-amber-400 font-bold">
-              Élève: {selectedStudent.name}
+              الطالب: {selectedStudent.name}
             </span>
           </div>
 
           {/* Question Prompt */}
           <div className="space-y-3">
-            <h3 className="text-base font-bold text-slate-100">
+            <h3 className="text-base font-bold text-slate-100 font-arabic">
               {currentQ.prompt}
             </h3>
 
@@ -445,10 +445,10 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
                   onClick={() => handleOptionSelect(idx)}
                   className={`w-full text-right p-4 rounded-xl border transition-all font-quran text-lg leading-relaxed flex items-center justify-between ${buttonStyle}`}
                 >
+                  <span>{opt}</span>
                   <span className="font-sans text-xs text-slate-500 font-mono">
                     #{idx + 1}
                   </span>
-                  <span>{opt}</span>
                 </button>
               );
             })}
@@ -457,7 +457,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
           {/* Explanation if submitted */}
           {isAnswerSubmitted && (
             <div className="p-4 bg-slate-950 border border-slate-800 rounded-xl text-xs space-y-1">
-              <span className="font-bold text-amber-400 block">Explication:</span>
+              <span className="font-bold text-amber-400 block font-arabic">الشرح والإيضاح:</span>
               <p className="text-slate-300">{currentQ.explanation}</p>
             </div>
           )}
@@ -468,7 +468,7 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
               onClick={() => setIsTestActive(false)}
               className="text-xs text-slate-500 hover:text-slate-300"
             >
-              Abandonner
+              إلغاء الاختبار
             </button>
 
             {!isAnswerSubmitted ? (
@@ -477,15 +477,15 @@ export const AutomatedTests: React.FC<AutomatedTestsProps> = ({ students, onTest
                 disabled={selectedOption === null}
                 className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs disabled:opacity-40 transition-all"
               >
-                Valider la Réponse
+                تأكيد الإجابة
               </button>
             ) : (
               <button
                 onClick={handleNextQuestion}
-                className="flex items-center space-x-2 px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all"
+                className="flex items-center space-x-2 rtl:space-x-reverse px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition-all"
               >
-                <span>Question Suivante</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>السؤال التالي</span>
+                <ArrowRight className="w-4 h-4 rtl:rotate-180" />
               </button>
             )}
           </div>

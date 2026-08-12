@@ -87,7 +87,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
 
   const handleSaveSession = () => {
     if (!selectedStudentId) {
-      alert('Veuillez choisir un élève pour enregistrer la séance.');
+      alert('الرجاء اختيار طالب لتسجيل الجلسة.');
       return;
     }
 
@@ -102,7 +102,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
       endAyah,
       grade,
       errors: activeSessionErrors,
-      notes: notes || `Séance de récitation - Sourate ${currentSurah.nameEnglish} (Versets ${startAyah} à ${endAyah})`,
+      notes: notes || `جلسة تسميع - سورة ${currentSurah.nameArabic} (من الآية ${startAyah} إلى ${endAyah})`,
       durationMinutes: sessionMinutes
     };
 
@@ -117,24 +117,24 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
       <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 shadow-2xl relative my-8">
         <button
           onClick={onClose}
-          className="absolute right-5 top-5 text-slate-400 hover:text-slate-200"
+          className="absolute left-5 top-5 text-slate-400 hover:text-slate-200"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
-        <div className="flex items-center space-x-3 mb-6 border-b border-slate-800 pb-4">
+        <div className="flex items-center space-x-3 rtl:space-x-reverse mb-6 border-b border-slate-800 pb-4">
           <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 p-0.5 flex items-center justify-center shadow-lg">
             <div className="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center text-emerald-400">
               <Mic className="w-6 h-6" />
             </div>
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-100">
-              Séance de Récitation & Évaluation Qaloon
+            <h2 className="text-lg font-bold text-slate-100 font-arabic">
+              جلسة التسميع والتقييم - رواية قالون
             </h2>
             <p className="text-xs text-slate-400">
-              Enregistrement direct des erreurs par verset & minuterie
+              تسجيل أخطاء التلاوة مباشرة لكل آية مع مؤقت الزمن
             </p>
           </div>
         </div>
@@ -145,7 +145,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
             {/* Student Picker */}
             <div>
               <label className="block text-slate-300 font-semibold mb-1">
-                Élève Évalué:
+                الطالب:
               </label>
               <select
                 value={selectedStudentId}
@@ -164,9 +164,9 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
             <div className="bg-slate-950 border border-slate-800 rounded-xl p-3 flex items-center justify-between">
               <div>
                 <span className="text-[10px] text-slate-500 uppercase font-bold block">
-                  Durée de Séance
+                  مدة الجلسة
                 </span>
-                <div className="flex items-center space-x-1.5 text-base font-mono font-bold text-amber-400 mt-0.5">
+                <div className="flex items-center space-x-1.5 rtl:space-x-reverse text-base font-mono font-bold text-amber-400 mt-0.5">
                   <Clock className="w-4 h-4 text-amber-500" />
                   <span>{formatTimer(secondsElapsed)}</span>
                 </div>
@@ -176,28 +176,28 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
               <button
                 type="button"
                 onClick={handleToggleRecording}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center space-x-1.5 transition-all ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold flex items-center space-x-1.5 rtl:space-x-reverse transition-all ${
                   isRecordingAudio
                     ? 'bg-rose-600 text-white animate-pulse'
                     : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
                 }`}
               >
                 {isRecordingAudio ? <MicOff className="w-3.5 h-3.5" /> : <Mic className="w-3.5 h-3.5" />}
-                <span>{isRecordingAudio ? 'Stop Rec' : 'Enregistrer'}</span>
+                <span>{isRecordingAudio ? 'إيقاف التسجيل' : 'تسجيل صوتي'}</span>
               </button>
             </div>
           </div>
 
           {/* Surah & Ayah Range Selection */}
           <div className="bg-slate-950 border border-slate-800/80 rounded-xl p-4 space-y-3">
-            <h4 className="font-bold text-slate-200 text-xs flex items-center space-x-2">
+            <h4 className="font-bold text-slate-200 text-xs flex items-center space-x-2 rtl:space-x-reverse">
               <Sparkles className="w-4 h-4 text-amber-400" />
-              <span>Passage Récité (Coran Qaloon)</span>
+              <span>المقطع المتلو (برواية قالون)</span>
             </h4>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div>
-                <label className="block text-slate-400 text-[11px] mb-1">Sourate:</label>
+                <label className="block text-slate-400 text-[11px] mb-1">السورة:</label>
                 <select
                   value={surahId}
                   onChange={(e) => {
@@ -210,14 +210,14 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
                 >
                   {SURAHS_DATA.map((s) => (
                     <option key={s.id} value={s.id}>
-                      #{s.id} {s.nameEnglish} ({s.nameArabic})
+                      #{s.id} سورة {s.nameArabic} ({s.nameEnglish})
                     </option>
                   ))}
                 </select>
               </div>
 
               <div>
-                <label className="block text-slate-400 text-[11px] mb-1">Verset Début:</label>
+                <label className="block text-slate-400 text-[11px] mb-1">من الآية:</label>
                 <input
                   type="number"
                   min={1}
@@ -229,7 +229,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
               </div>
 
               <div>
-                <label className="block text-slate-400 text-[11px] mb-1">Verset Fin:</label>
+                <label className="block text-slate-400 text-[11px] mb-1">إلى الآية:</label>
                 <input
                   type="number"
                   min={startAyah}
@@ -246,22 +246,22 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
           <div className="bg-slate-950 border border-slate-800 rounded-xl p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="font-bold text-slate-300">
-                Erreurs enregistrées pendant cette séance ({activeSessionErrors.length})
+                الأخطاء المسجلة في هذه الجلسة ({activeSessionErrors.length})
               </span>
               {activeSessionErrors.length > 0 && (
                 <button
                   onClick={onClearSessionErrors}
-                  className="text-slate-500 hover:text-rose-400 text-[10px] flex items-center space-x-1"
+                  className="text-slate-500 hover:text-rose-400 text-[10px] flex items-center space-x-1 rtl:space-x-reverse"
                 >
                   <Trash2 className="w-3 h-3" />
-                  <span>Réinitialiser</span>
+                  <span>إعادة ضبط</span>
                 </button>
               )}
             </div>
 
             {activeSessionErrors.length === 0 ? (
               <p className="text-slate-500 text-[11px] italic">
-                Aucune erreur relevée. (Sélectionnez des versets dans le lecteur pour ajouter des erreurs).
+                لا توجد أخطاء مسجلة. (يمكنك تحديد الآيات من المصحف لتسجيل الأخطاء).
               </p>
             ) : (
               <div className="space-y-1.5 max-h-36 overflow-y-auto pr-1">
@@ -270,13 +270,13 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
                     key={idx}
                     className="flex items-center justify-between bg-slate-900 p-2 rounded-lg border border-slate-800 text-[11px]"
                   >
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-2 rtl:space-x-reverse">
                       <span className="bg-rose-500/20 text-rose-300 font-mono px-1.5 py-0.5 rounded text-[10px]">
-                        V. {err.ayahNumber}
+                        آية {err.ayahNumber}
                       </span>
                       <span className="text-slate-200 font-medium">{err.description}</span>
                     </div>
-                    <span className="text-slate-500 text-[10px] capitalize">{err.category}</span>
+                    <span className="text-slate-500 text-[10px]">{err.category}</span>
                   </div>
                 ))}
               </div>
@@ -286,7 +286,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
           {/* Grade Selector */}
           <div>
             <label className="block text-slate-300 font-semibold mb-1.5">
-              Appréciation de l'Enseignant:
+              تقييم المعلم:
             </label>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
               <button
@@ -298,7 +298,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
                     : 'bg-slate-950 border-slate-800 text-slate-400'
                 }`}
               >
-                ⭐ Excellent
+                ⭐ ممتاز
               </button>
               <button
                 type="button"
@@ -309,7 +309,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
                     : 'bg-slate-950 border-slate-800 text-slate-400'
                 }`}
               >
-                👍 Bon
+                👍 جيد
               </button>
               <button
                 type="button"
@@ -320,7 +320,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
                     : 'bg-slate-950 border-slate-800 text-slate-400'
                 }`}
               >
-                ⚠️ À Réviser
+                ⚠️ يحتاج مراجعة
               </button>
               <button
                 type="button"
@@ -331,7 +331,7 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
                     : 'bg-slate-950 border-slate-800 text-slate-400'
                 }`}
               >
-                ❌ Non Acquis
+                ❌ لم يجتز
               </button>
             </div>
           </div>
@@ -339,33 +339,33 @@ export const SessionRecorder: React.FC<SessionRecorderProps> = ({
           {/* Teacher Comments */}
           <div>
             <label className="block text-slate-300 font-semibold mb-1">
-              Observations / Recommandations:
+              ملاحظات وتوصيات المعلم:
             </label>
             <textarea
               rows={2}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              placeholder="Ex: Réviser la Sila Mim al-Jam' et répéter les versets 28 à 30 pour la prochaine séance..."
+              placeholder="مثال: مراجعة صلة ميم الجمع وتكرار الآيات من 28 إلى 30 للجلسة القادمة..."
               className="w-full bg-slate-950 border border-slate-800 rounded-xl p-2.5 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500"
             />
           </div>
 
           {/* Actions */}
-          <div className="flex justify-end space-x-3 pt-2">
+          <div className="flex justify-end space-x-3 rtl:space-x-reverse pt-2">
             <button
               type="button"
               onClick={onClose}
               className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold"
             >
-              Annuler
+              إلغاء
             </button>
             <button
               type="button"
               onClick={handleSaveSession}
-              className="flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold shadow-lg"
+              className="flex items-center space-x-2 rtl:space-x-reverse px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold shadow-lg"
             >
               <Save className="w-4 h-4" />
-              <span>Sauvegarder la Séance</span>
+              <span>حفظ الجلسة</span>
             </button>
           </div>
         </div>
