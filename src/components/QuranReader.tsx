@@ -166,7 +166,7 @@ export const QuranReader: React.FC<QuranReaderProps> = ({
                 الجزء {selectedAyah?.juzNumber || surah.juzStart}
               </span>
               <span>• الصفحة {selectedAyah?.pageNumber || surah.pageStart}</span>
-              <span className="text-emerald-400 font-medium">• {surah.revelationType === 'Meccan' ? 'مكية' : 'مدنية'} ({surah.versesCount} آية)</span>
+              <span className="text-emerald-400 font-medium">• {surah.revelationType === 'Makki' ? 'مكية' : 'مدنية'} ({surah.versesCount} آية)</span>
             </div>
           </div>
 

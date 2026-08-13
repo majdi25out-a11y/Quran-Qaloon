@@ -104,7 +104,7 @@ export const SurahList: React.FC<SurahListProps> = ({ onSelectSurah }) => {
                   </div>
                   <div className="flex items-center space-x-2 rtl:space-x-reverse text-xs text-slate-400 mt-0.5">
                     <span className="px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-amber-300/80 font-arabic">
-                      {surah.revelationType === 'Meccan' ? 'مكية' : 'مدنية'}
+                      {surah.revelationType === 'Makki' ? 'مكية' : 'مدنية'}
                     </span>
                     <span>• {surah.versesCount} آية</span>
                     <span>• الجزء {surah.juzStart}</span>
